@@ -4,6 +4,8 @@ const  { router } = require('./router')
 
 const {bbdd}    = require('./bbdd');
 
+const { user } = require('dotenv').config().parsed
+
 let  express = require('express');
 let  app     = express();
 let  cors    = require('cors');
@@ -16,7 +18,7 @@ app.use(express.urlencoded({extended: false})) // Al enviar datos de un formular
 app.use(router)
 
 
-app.listen(3002, ()=>{
+app.listen(PORT, ()=>{
     console.log('Ini api');
 })
 
